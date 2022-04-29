@@ -1,16 +1,13 @@
 # tic_tac_toe
 
-A new Flutter project.
+A simple tic-tac-toe game made with dart in flutter....Although I had to look some code for reference and inspiration but i am glad that i was able to complete this project :)....
 
-## Getting Started
+<br>
+<img src="https://github.com/FaizFk/TicTacToe-Flutter-Game/blob/debug/lib/images/tictactoe1.png?raw=true" height=720px width=1000px>
+<br>
+<br>
+<img src="https://github.com/FaizFk/TicTacToe-Flutter-Game/blob/debug/lib/images/img2.png?raw=true" height=720px width=1000px>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<br>
+<br>
+<img src="https://github.com/FaizFk/TicTacToe-Flutter-Game/blob/debug/lib/images/img3.png?raw=true" height=720px width=1000px>

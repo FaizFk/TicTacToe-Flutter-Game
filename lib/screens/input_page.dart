@@ -15,56 +15,92 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
+    return MaterialApp(
+      theme: ThemeData.dark(),
+      home: Scaffold(
+        body: SafeArea(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Player1 Name',
-                style: kPlayerNameLabelStyle,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      child: Text(
+                        'Player1 Name',
+                        style: kPlayerNameLabelStyle,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.red, width: 5.0),
+                          ),
+                        ),
+                        onChanged: (value) {
+                          if (value != '') Player1 = value;
+                        },
+                        maxLength: 12,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              TextField(
-                onChanged: (value) {
-                  if (value != '') Player1 = value;
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      child: Text(
+                        'Player2 Name',
+                        style: kPlayerNameLabelStyle,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.red, width: 5.0),
+                          ),
+                        ),
+                        onChanged: (value) {
+                          if (value != '') Player2 = value;
+                        },
+                        maxLength: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              RawMaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainGame(Player1, Player2)));
                 },
-                maxLength: 12,
-              ),
+                padding: EdgeInsets.all(7),
+                fillColor: Colors.green[600],
+                child: Text(
+                  'Start',
+                  style: kStartButtonStyle,
+                ),
+              )
             ],
           ),
         ),
-        Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Player2 Name',
-                style: kPlayerNameLabelStyle,
-              ),
-              TextField(
-                onChanged: (value) {
-                  if (value != '') Player2 = value;
-                },
-                maxLength: 12,
-              ),
-            ],
-          ),
-        ),
-        RawMaterialButton(
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => MainGame(Player1, Player2)));
-          },
-          fillColor: Colors.green[600],
-          child: Text(
-            'Start',
-            style: kStartButtonStyle,
-          ),
-        )
-      ],
+      ),
     );
   }
 }
